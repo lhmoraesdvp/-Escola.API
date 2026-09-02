@@ -3,6 +3,7 @@
     <File Path="C:/Users/morae/Downloads/gitignore" />
   </Folder>
   <Project Path="Escola.Api/Escola.Api.csproj" Id="4f0fc427-5ded-495b-9950-a35af54e79fc" />
+  <Project Path="Escola.Aplicacao.Tests/Escola.Aplicacao.Tests.csproj" Id="62db7823-1935-4b33-bbb7-e8dd9debeaaa" />
   <Project Path="Escola.Aplicacao/Escola.Aplicacao.csproj" Id="3ca08457-b7a5-475a-9fe5-aaf0c945dfeb" />
   <Project Path="Escola.Dominio/Escola.Dominio.csproj" Id="109be050-c8c7-40f4-b4c6-657d4795e4f3" />
   <Project Path="Escola.Infraestrutura/Escola.Infraestrutura.csproj" Id="c7f75c31-628c-474a-b98f-c1fa98138bf1" />
