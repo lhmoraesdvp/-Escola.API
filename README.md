@@ -138,8 +138,8 @@ O mapeamento de exceções para status HTTP é feito de forma centralizada em `E
 ## Itens bônus
 
 - [ ] Cache (Redis ou em memória) na listagem de turmas
-- [ ] Testes unitários da regra de matrícula
-- [ ] Tela HTML + jQuery consumindo a listagem de alunos
+- [X] Testes unitários da regra de matrícula
+- [X] Tela HTML + jQuery consumindo a listagem de alunos
 
 ## O que ficou faltando / decisões e observações
 

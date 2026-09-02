@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web.Http;
+﻿using System.Web.Http;
 
 namespace Escola.Api
 {
@@ -9,10 +6,8 @@ namespace Escola.Api
     {
         public static void Register(HttpConfiguration config)
         {
-            // Configuração e serviços de API Web
-
-            // Rotas de API Web
             config.MapHttpAttributeRoutes();
+
             config.Filters.Add(new Escola.Api.Filtros.ExcecaoFiltroAttribute());
 
             config.Routes.MapHttpRoute(
@@ -20,8 +15,13 @@ namespace Escola.Api
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
             // forca JSON como formato de resposta padrao
             config.Formatters.Remove(config.Formatters.XmlFormatter);
+
+            // usa camelCase no JSON (nome -> "nome", nao "Nome"), consistente com o alunos.html
+            config.Formatters.JsonFormatter.SerializerSettings.ContractResolver =
+                new Newtonsoft.Json.Serialization.CamelCasePropertyNamesContractResolver();
         }
     }
 }
