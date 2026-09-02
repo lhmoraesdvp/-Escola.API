@@ -41,7 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dados\IConexaoFactory.cs" />
+    <Compile Include="Entidades\Aluno.cs" />
+    <Compile Include="Entidades\Matricula.cs" />
+    <Compile Include="Entidades\Turma.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositorios\IAlunoRepositorio.cs" />
+    <Compile Include="Repositorios\IMatriculaRepositorio.cs" />
+    <Compile Include="Repositorios\ITurmaRepositorio.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
