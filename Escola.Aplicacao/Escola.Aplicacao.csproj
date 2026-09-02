@@ -50,6 +50,7 @@
     <Compile Include="DTOs\AlunoListaResponseDto.cs" />
     <Compile Include="DTOs\AlunoRequestDto.cs" />
     <Compile Include="DTOs\AlunoResponseDto.cs" />
+    <Compile Include="DTOs\AlunosPorTurmaResponseDto.cs" />
     <Compile Include="DTOs\MatriculaRequestDto.cs" />
     <Compile Include="DTOs\TurmaResponseDto.cs" />
     <Compile Include="Excecoes\EntidadeNaoEncontradaException.cs" />
@@ -57,10 +58,12 @@
     <Compile Include="Excecoes\RequisicaoInvalidaException.cs" />
     <Compile Include="Interfaces\IAlunoService.cs" />
     <Compile Include="Interfaces\IMatriculaService.cs" />
+    <Compile Include="Interfaces\IRelatorioService.cs" />
     <Compile Include="Interfaces\ITurmaService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Servicos\AlunoService.cs" />
     <Compile Include="Servicos\MatriculaService.cs" />
+    <Compile Include="Servicos\RelatorioService.cs" />
     <Compile Include="Servicos\TurmaService.cs" />
   </ItemGroup>
   <ItemGroup>

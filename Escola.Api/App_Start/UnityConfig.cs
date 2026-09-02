@@ -33,6 +33,8 @@ namespace Escola.Api
             container.RegisterType<IAlunoService, AlunoService>();
             container.RegisterType<ITurmaService, TurmaService>();
             container.RegisterType<IMatriculaService, MatriculaService>();
+            container.RegisterType<IRelatorioRepositorio, RelatorioRepositorio>();
+            container.RegisterType<IRelatorioService, RelatorioService>();
         }
     }
 }
