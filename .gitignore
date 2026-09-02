@@ -1,0 +1,31 @@
+# Build results
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# NuGet
+packages/
+*.nupkg
+
+# ReSharper / Rider
+_ReSharper*/
+*.DotSettings.user
+
+# Arquivos de sistema
+Thumbs.db
+.DS_Store
+
+# Publicação
+publish/
+*.publishsettings
+
+# Testes
+TestResults/
