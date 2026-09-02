@@ -13,12 +13,15 @@ namespace Escola.Api
 
             // Rotas de API Web
             config.MapHttpAttributeRoutes();
+            config.Filters.Add(new Escola.Api.Filtros.ExcecaoFiltroAttribute());
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+            // forca JSON como formato de resposta padrao
+            config.Formatters.Remove(config.Formatters.XmlFormatter);
         }
     }
 }
