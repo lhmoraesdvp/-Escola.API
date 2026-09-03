@@ -1,15 +1,16 @@
 ﻿#nullable disable
-using System;
-using System.Data;
-using System.Threading.Tasks;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Moq;
 using Escola.Aplicacao.DTOs;
 using Escola.Aplicacao.Excecoes;
 using Escola.Aplicacao.Servicos;
+using Escola.Dominio.Cache;
 using Escola.Dominio.Dados;
 using Escola.Dominio.Entidades;
 using Escola.Dominio.Repositorios;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Moq;
+using System;
+using System.Data;
+using System.Threading.Tasks;
 
 namespace Escola.Aplicacao.Tests
 {
@@ -22,6 +23,7 @@ namespace Escola.Aplicacao.Tests
         private Mock<IMatriculaRepositorio> _matriculaRepositorioMock;
         private Mock<IDbConnection> _conexaoMock;
         private Mock<IDbTransaction> _transacaoMock;
+        private Mock<ICacheService> _cacheServiceMock;
         private MatriculaService _service;
 
         [TestInitialize]
@@ -30,6 +32,7 @@ namespace Escola.Aplicacao.Tests
             _alunoRepositorioMock = new Mock<IAlunoRepositorio>();
             _turmaRepositorioMock = new Mock<ITurmaRepositorio>();
             _matriculaRepositorioMock = new Mock<IMatriculaRepositorio>();
+            _cacheServiceMock = new Mock<ICacheService>();
 
             _transacaoMock = new Mock<IDbTransaction>();
 
@@ -43,7 +46,8 @@ namespace Escola.Aplicacao.Tests
                 _conexaoFactoryMock.Object,
                 _alunoRepositorioMock.Object,
                 _turmaRepositorioMock.Object,
-                _matriculaRepositorioMock.Object);
+                _matriculaRepositorioMock.Object,
+                _cacheServiceMock.Object);
         }
 
         /// <summary>
@@ -178,6 +182,8 @@ namespace Escola.Aplicacao.Tests
 
             _transacaoMock.Verify(t => t.Commit(), Times.Once);
             _transacaoMock.Verify(t => t.Rollback(), Times.Never);
+
+            _cacheServiceMock.Verify(c => c.RemoverAsync("turmas:listagem"), Times.Once);
         }
     }
 }

@@ -8,6 +8,8 @@ using Escola.Infraestrutura.Dados;
 using Escola.Infraestrutura.Repositorios;
 using Escola.Aplicacao.Interfaces;
 using Escola.Aplicacao.Servicos;
+using Escola.Dominio.Cache;
+using Escola.Infraestrutura.Cache;
 
 namespace Escola.Api
 {
@@ -29,7 +31,7 @@ namespace Escola.Api
             container.RegisterType<IAlunoRepositorio, AlunoRepositorio>();
             container.RegisterType<ITurmaRepositorio, TurmaRepositorio>();
             container.RegisterType<IMatriculaRepositorio, MatriculaRepositorio>();
-
+            container.RegisterType<ICacheService, CacheEmMemoria>();
             container.RegisterType<IAlunoService, AlunoService>();
             container.RegisterType<ITurmaService, TurmaService>();
             container.RegisterType<IMatriculaService, MatriculaService>();

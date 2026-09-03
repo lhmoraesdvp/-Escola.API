@@ -5,6 +5,7 @@ using Escola.Aplicacao.Interfaces;
 using Escola.Dominio.Dados;
 using Escola.Dominio.Entidades;
 using Escola.Dominio.Repositorios;
+using Escola.Dominio.Cache;
 
 namespace Escola.Aplicacao.Servicos
 {
@@ -15,18 +16,21 @@ namespace Escola.Aplicacao.Servicos
         private readonly ITurmaRepositorio _turmaRepositorio;
         private readonly IMatriculaRepositorio _matriculaRepositorio;
 
+        private readonly ICacheService _cacheService; // novo campo
+
         public MatriculaService(
             IConexaoFactory conexaoFactory,
             IAlunoRepositorio alunoRepositorio,
             ITurmaRepositorio turmaRepositorio,
-            IMatriculaRepositorio matriculaRepositorio)
+            IMatriculaRepositorio matriculaRepositorio,
+            ICacheService cacheService) // novo parametro
         {
             _conexaoFactory = conexaoFactory;
             _alunoRepositorio = alunoRepositorio;
             _turmaRepositorio = turmaRepositorio;
             _matriculaRepositorio = matriculaRepositorio;
+            _cacheService = cacheService; // nova atribuicao
         }
-
         public async Task MatricularAsync(MatriculaRequestDto request)
         {
             // validacao que nao precisa estar dentro da transacao,
@@ -67,6 +71,7 @@ namespace Escola.Aplicacao.Servicos
                         await _turmaRepositorio.DecrementarVagaAsync(request.TurmaId, conexao, transacao);
 
                         transacao.Commit();
+                        await _cacheService.RemoverAsync("turmas:listagem");
                     }
                     catch
                     {

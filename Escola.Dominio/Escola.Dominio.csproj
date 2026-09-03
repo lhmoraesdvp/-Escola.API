@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cache\ICacheService.cs" />
     <Compile Include="Dados\IConexaoFactory.cs" />
     <Compile Include="Entidades\Aluno.cs" />
     <Compile Include="Entidades\Matricula.cs" />
