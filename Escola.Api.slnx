@@ -1,6 +1,7 @@
 <Solution>
   <Folder Name="/Itens de Solução/">
     <File Path="C:/Users/morae/Downloads/gitignore" />
+    <File Path="README.md" />
   </Folder>
   <Project Path="Escola.Api/Escola.Api.csproj" Id="4f0fc427-5ded-495b-9950-a35af54e79fc" />
   <Project Path="Escola.Aplicacao.Tests/Escola.Aplicacao.Tests.csproj" Id="62db7823-1935-4b33-bbb7-e8dd9debeaaa" />
